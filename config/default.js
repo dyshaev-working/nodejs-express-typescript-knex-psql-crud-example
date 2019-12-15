@@ -1,3 +1,24 @@
+const {
+  camelCase,
+  mapKeys,
+} = require('lodash');
+
+const {
+  cond,
+  equals,
+  identity,
+  map,
+  pipe,
+  T,
+  type,
+  when,
+} = require('ramda');
+
+// NOTE! we cannot use lodash snakeCase as it replaces {*,_,?} to empty string
+function toSnakeCase(value) {
+  return value.replace(/([A-Z])/g, $1 => `_${$1.toLowerCase()}`);
+}
+
 module.exports = {
   app: {
     port: '3000',
