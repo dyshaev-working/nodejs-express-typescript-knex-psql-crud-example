@@ -10,7 +10,7 @@ async function createTaskService(req: Request, res: Response, next: NextFunction
 
   try {
     return res
-      .status(HttpStatus.OK)
+      .status(HttpStatus.CREATED)
       .send(await tasksDAO.createTask(body));
   } catch (e) {
     CustomLogger.error(e);

@@ -19,5 +19,28 @@ services:
       - POSTGRES_USER=test
       - POSTGRES_PASSWORD=test
       - POSTGRES_DB=test
+      - POSTGRES_HOST=postgres
     ports:
-      - 5432:5432
+      - "5432:5432"
+    networks:
+      - db-manager
+
+  db-manager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+     - "./:/app"
+    depends_on:
+      - postgres
+    command: "sh -c 'npm install && npm run migrate:up'"
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=test
+      - POSTGRES_HOST=postgres
+    networks:
+      - db-manager
+
+networks:
+  db-manager:
