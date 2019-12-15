@@ -9,7 +9,8 @@
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "start": "node ./build/bin/www",
     "start:dev": "nodemon ./build/bin/www",
-    "knex": "./node_modules/knex/bin/cli.js"
+    "knex": "./node_modules/knex/bin/cli.js",
+    "migrate:up": "./node_modules/knex/bin/cli.js migrate:latest"
   },
   "pre-commit": [
     "lint",
@@ -40,6 +41,8 @@
     "ts-jest": "^24.2.0",
     "ts-node": "^8.5.4",
     "tslint": "^5.20.1",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-eslint-rules": "^5.4.0",
     "typescript": "^3.7.3"
   },
   "dependencies": {
@@ -48,6 +51,8 @@
     "@types/config": "0.0.36",
     "@types/jest": "^24.0.23",
     "@types/log4js": "^2.3.5",
+    "@types/pg": "^7.11.2",
+    "@types/ramda": "^0.26.38",
     "ajv": "^6.10.2",
     "alasql": "^0.5.1",
     "config": "^3.2.4",
@@ -61,6 +66,8 @@
     "knex": "^0.20.4",
     "log4js": "^6.1.0",
     "nodemon": "^2.0.2",
+    "pg": "^7.14.0",
+    "ramda": "^0.26.1",
     "ts-node": "^8.5.4"
   },
   "jest": {

@@ -25,16 +25,17 @@ module.exports = {
   },
   knex: {
     client: 'pg',
+    connection: 'postgres://test:test@postgres:5432/test',
     pool: {
       min: 1,
       max: 2,
     },
     migrations: {
-      directory: 'sql/migrations',
+      directory: './sql/migrations',
       tableName: '__migrations',
     },
     seeds: {
-      directory: 'sql/seeds',
+      directory: './sql/seeds',
     },
     wrapIdentifier: (value, origImpl) => origImpl(toSnakeCase(value)),
     // overly simplified snake_case -> camelCase converter
