@@ -1,0 +1,7 @@
+.idea
+.env
+node_modules
+build
+config/local.ts
+database
+npm-debug.log

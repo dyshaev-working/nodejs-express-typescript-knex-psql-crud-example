@@ -1,0 +1,43 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint-eslint-rules",
+    "tslint-config-airbnb"
+  ],
+  "jsRules": {
+    "no-unused-expression": true
+  },
+  "rules": {
+    "max-line-length": [
+      true,
+      150
+    ],
+    "newline-before-return": true,
+    "arrow-parens": [
+      true,
+      "ban-single-arg-parens"
+    ],
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "object-shorthand-properties-first": false,
+    "interface-name": false,
+    "prefer-template": false,
+    "import-name": false,
+    "ter-arrow-parens": false,
+    "variable-name": {
+      "options": [
+        "allow-pascal-case"
+      ]
+    }
+  },
+  "rulesDirectory": [
+    "node_modules/tslint-eslint-rules/dist/rules"
+  ]
+}

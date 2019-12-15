@@ -1,0 +1,23 @@
+version: "3"
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - "./:/app"
+    links:
+      - postgres
+    ports:
+      - "3000:3000"
+
+  postgres:
+    image: postgres:latest
+    volumes:
+      - ./database:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=test
+    ports:
+      - 5432:5432
