@@ -56,4 +56,4 @@ app.use((err: any, req: any, res: any, next: any) => {
 
 app.use(customErrorHandler);
 
-export default app;
+module.exports = app;

@@ -8,6 +8,8 @@ services:
       - "./:/app"
     links:
       - postgres
+    environment:
+      - POSTGRES_HOST=postgres
     ports:
       - "3000:3000"
 

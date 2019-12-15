@@ -5,3 +5,4 @@ build
 config/local.js
 database
 npm-debug.log
+tests/*snapshots*

@@ -2,7 +2,7 @@ import * as config from 'config';
 import * as debug from 'debug';
 import * as http from 'http';
 
-import app from '../src/app';
+const app = require('../src/app');
 
 const PORT: string = config.get('app.port');
 
