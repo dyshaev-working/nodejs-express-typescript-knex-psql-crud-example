@@ -8,6 +8,7 @@ import { HttpStatus } from './common/enum/http-status.enum';
 import apiRouter from './routes/api';
 import healthRouter from './routes/health';
 
+const { ValidationError } = require('express-json-validator-middleware');
 const app = express();
 
 app.use(express.json());
@@ -29,8 +30,14 @@ app.use((req, res, next) => {
   next(httpErrors(HttpStatus.NOT_FOUND));
 });
 
-app.use((err: any, req: any, res: any) => {
+app.use((err: any, req: any, res: any, next: any) => {
   res.type('application/json');
+
+  if (err instanceof ValidationError) {
+    res
+      .status(HttpStatus.BAD_REQUEST)
+      .send({ message: err.validationErrors });
+  }
 
   if (err.isBoom) {
     res
