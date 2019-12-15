@@ -2,6 +2,6 @@
 .env
 node_modules
 build
-config/local.ts
+config/local.js
 database
 npm-debug.log

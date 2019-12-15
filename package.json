@@ -8,7 +8,8 @@
     "build": "tsc",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "start": "node ./build/bin/www",
-    "start:dev": "nodemon ./build/bin/www"
+    "start:dev": "nodemon ./build/bin/www",
+    "knex": "./node_modules/knex/bin/cli.js"
   },
   "pre-commit": [
     "lint",
@@ -52,6 +53,7 @@
     "http": "0.0.0",
     "http-errors": "^1.7.3",
     "jest": "^24.9.0",
+    "knex": "^0.20.4",
     "log4js": "^6.1.0",
     "nodemon": "^2.0.2",
     "ts-node": "^8.5.4"
