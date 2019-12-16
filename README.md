@@ -5,8 +5,8 @@ Example CRUD application
 Node.js, Typescript, Docker, Jest, Ajv, Express, PostgreSQL, Postman
 
 # To start application
-1. docker-compose up
+1. *docker-compose up
 
 # Tests (e2e)
-1. docker-compose up -d postgres
-2. npm run test
+1. *docker-compose up -d db-manager
+2. *npm run test
