@@ -54,9 +54,15 @@ async function getTaskByIdService(req: Request, res: Response, next: NextFunctio
 
 async function getHeightPriorityTaskService(req: Request, res: Response, next: NextFunction) {
   try {
+    const heightPriorityTask = await tasksDAO.getHeightPriority();
+
+    if (!heightPriorityTask) {
+      throw new Error(ErrorMessage.NOT_FOUND_ERROR);
+    }
+
     return res
       .status(HttpStatus.OK)
-      .send(await tasksDAO.getHeightPriority());
+      .send(heightPriorityTask);
   } catch (e) {
     CustomLogger.error(e);
 
