@@ -8,5 +8,5 @@ Node.js, Typescript, Docker, Jest, Ajv, Express, PostgreSQL, Postman
 1. docker-compose up
 
 # Tests (e2e)
-1. docker-compose up -d postgres
+1. docker-compose up -d db-manager
 2. npm run test
