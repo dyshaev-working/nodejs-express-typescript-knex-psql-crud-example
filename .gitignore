@@ -6,3 +6,4 @@ config/local.js
 database
 npm-debug.log
 tests/*snapshots*
+package-lock.json
